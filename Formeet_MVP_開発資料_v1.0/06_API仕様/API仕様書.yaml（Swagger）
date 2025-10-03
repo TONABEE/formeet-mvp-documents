@@ -1,0 +1,124 @@
+openapi: 3.0.0
+info:
+  title: Formeet MVP API
+  version: 1.0.0
+  description: FormeetアプリのMVP版API仕様書
+
+servers:
+  - url: https://api.formeet.app/v1
+    description: 本番環境
+  - url: https://dev-api.formeet.app/v1
+    description: 開発環境
+
+paths:
+  /users:
+    get:
+      summary: ユーザー情報取得
+      responses:
+        '200':
+          description: 成功
+    post:
+      summary: ユーザー登録
+      responses:
+        '201':
+          description: 作成成功
+
+  /tasks:
+    get:
+      summary: タスク一覧取得
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [TODO, IN_PROGRESS, COMPLETED]
+      responses:
+        '200':
+          description: 成功
+    post:
+      summary: タスク作成
+      responses:
+        '201':
+          description: 作成成功
+
+  /tasks/{id}:
+    put:
+      summary: タスク更新
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 更新成功
+    delete:
+      summary: タスク削除
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: 削除成功
+
+  /schedules:
+    get:
+      summary: スケジュール取得
+      responses:
+        '200':
+          description: 成功
+    post:
+      summary: スケジュール作成
+      responses:
+        '201':
+          description: 作成成功
+
+  /routines:
+    get:
+      summary: ルーティン一覧取得
+      responses:
+        '200':
+          description: 成功
+    post:
+      summary: ルーティン作成
+      responses:
+        '201':
+          description: 作成成功
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+
+    Task:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        description:
+          type: string
+        priority:
+          type: string
+          enum: [LOW, MEDIUM, HIGH]
+        status:
+          type: string
+          enum: [TODO, IN_PROGRESS, COMPLETED]
+        createdAt:
+          type: string
+          format: date-time

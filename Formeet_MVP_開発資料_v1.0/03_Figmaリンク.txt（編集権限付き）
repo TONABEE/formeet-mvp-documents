@@ -1,0 +1,40 @@
+# Figmaリンク（編集権限付き）
+
+## FormeetアプリデザインFigmaプロジェクト
+
+### メインFigmaファイル
+[Figmaリンクをここに貼り付けてください]
+
+### アクセス権限
+- 編集権限付きで共有
+- コメント権限有効
+
+### Figmaプロジェクト構成
+
+🎨 Formeet Design System
+├── 📁 01_Design System
+│   ├── Colors（システム色・プロジェクト色）
+│   ├── Typography（フォント定義）
+│   ├── Components（共通コンポーネント）
+│   └── Icons（アイコンセット）
+├── 📁 02_Screens
+│   ├── 00_Onboarding
+│   ├── 01_Main_Normal
+│   ├── 02_Main_Routine
+│   ├── 03_Daily_Planning
+│   ├── 04_Schedule
+│   ├── 05_Task_Management
+│   ├── 06_Task_Execution
+│   ├── 07_Settings
+│   └── 08_Review
+├── 📁 03_User_Flows
+│   ├── Morning_Routine_Flow
+│   ├── Daily_Planning_Flow
+│   └── Task_Execution_Flow
+└── 📁 04_Prototype
+    └── Interactive_Prototype_Link
+
+### 使用方法
+1. 上記リンクからFigmaファイルにアクセス
+2. 編集権限で各画面を確認・修正可能
+3. コンポーネントライブラリ活用推奨
